@@ -13,7 +13,17 @@ public class StackPaneController {
 	}
 	
 	@FXML
-	public void initialize() {
+	void initialize() {
 		button.setText("Nowa Nazwa");
+	}
+	
+	@FXML
+	public void onActionButton() {
+		System.out.println("On Action method");
+	}
+	
+	@FXML
+	public void onMouseEnteredButton() {
+		System.out.println("you are pointing button - onMouseEnteredButton method");
 	}
 }

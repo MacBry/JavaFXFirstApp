@@ -5,6 +5,6 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.StackPaneController">
    <children>
-      <Button fx:id="buttonPrzycisk" mnemonicParsing="false" text="Przycisk" />
+      <Button fx:id="button" mnemonicParsing="false" onAction="#onActionButton" onMouseEntered="#onMouseEnteredButton" text="Przycisk" />
    </children>
 </StackPane>
