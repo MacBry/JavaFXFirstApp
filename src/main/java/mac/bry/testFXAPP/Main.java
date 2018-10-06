@@ -33,7 +33,7 @@ public class Main extends Application {
 		FXMLLoader fxmlLoader = new FXMLLoader();
 		fxmlLoader.setLocation(this.getClass().getResource("/fxml/stackPaneWindow.fxml"));
 		StackPane stackPane = fxmlLoader.load();
-		Scene scene = new Scene(stackPane,400,400);
+		Scene scene = new Scene(stackPane,240,400);
 		primaryStage.setScene(scene);
 		
 		primaryStage.setTitle("First JavaFx app");

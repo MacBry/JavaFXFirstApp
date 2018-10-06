@@ -1,20 +1,34 @@
 package mac.bry.testFXAPP.Controllers;
 
+import com.mac.bry.krew.pepowiny.DButils.DBUserUtility;
+import com.mac.bry.krew.pepowiny.entity.User;
+import com.sun.prism.paint.Color;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
 public class StackPaneController {
 
-	@FXML
-	private Button button;
+	private DBUserUtility dbUserutil; 
 	
 	@FXML
-	private Label labael1;
+	private TextField LoginField;
+	
+	@FXML
+	private Button LogIn;
+	
+	@FXML
+	private PasswordField passwordField;
 	
 	@FXML
 	private VBox VBOX;
+	
+	@FXML
+	private Label label;
 	
 	public StackPaneController() {
 		System.out.println("I am a Controller");
@@ -22,23 +36,17 @@ public class StackPaneController {
 	
 	@FXML
 	void initialize() {
-		button.setText("Nowa Nazwa");
+		LogIn.setText("Zaloguj");
+		dbUserutil = new DBUserUtility();
 	}
 	
 	@FXML
-	public void onActionButton() {
-		System.out.println("On Action method");
-		labael1.setText("onActionButton");
+	public void OnActionLoginButton() {
+		if(dbUserutil.loginCheck(new User(LoginField.getText(), passwordField.getText()))){
+			label.setText("Zalogowales sie");
+		}
+		else label.setText("Nie zalogowany");
+		
 	}
-	
-	@FXML
-	public void onMouseEnteredButton() {
-		System.out.println("you are pointing button - onMouseEnteredButton method");
-		labael1.setText("you are pointing button - onMouseEnteredButton method");
-	}
-	@FXML
-	public void VBoxOnMouseEntered() {
-		System.out.println("you are pointing button - VBoxOnMouseEntered method");
-		labael1.setText("you are pointing nothing - VBoxOnMouseEntered");
-	}
+
 }
