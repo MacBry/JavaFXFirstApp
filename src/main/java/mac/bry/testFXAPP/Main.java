@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -32,8 +33,8 @@ public class Main extends Application {
 		//****************************************//
 		FXMLLoader fxmlLoader = new FXMLLoader();
 		fxmlLoader.setLocation(this.getClass().getResource("/fxml/stackPaneWindow.fxml"));
-		StackPane stackPane = fxmlLoader.load();
-		Scene scene = new Scene(stackPane,240,400);
+		Pane Pane = fxmlLoader.load();
+		Scene scene = new Scene(Pane);
 		primaryStage.setScene(scene);
 		
 		primaryStage.setTitle("First JavaFx app");
