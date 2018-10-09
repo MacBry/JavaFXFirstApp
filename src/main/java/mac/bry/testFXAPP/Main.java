@@ -32,9 +32,9 @@ public class Main extends Application {
 		//Stack Pane from FXML file
 		//****************************************//
 		FXMLLoader fxmlLoader = new FXMLLoader();
-		fxmlLoader.setLocation(this.getClass().getResource("/fxml/stackPaneWindow.fxml"));
-		Pane Pane = fxmlLoader.load();
-		Scene scene = new Scene(Pane);
+		fxmlLoader.setLocation(this.getClass().getResource("/fxml/MainStackPane.fxml"));
+		StackPane stackPane = fxmlLoader.load();
+		Scene scene = new Scene(stackPane);
 		primaryStage.setScene(scene);
 		
 		primaryStage.setTitle("First JavaFx app");
