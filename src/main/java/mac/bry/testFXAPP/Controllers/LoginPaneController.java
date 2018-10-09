@@ -8,6 +8,7 @@ import com.mac.bry.krew.pepowiny.entity.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -33,6 +34,9 @@ public class LoginPaneController {
 	Button LoginButtonLoginPane;
 	
 	@FXML
+	Label labelLoginPane;
+	
+	@FXML
 	public void initialize() {
 		
 	}
@@ -54,8 +58,19 @@ public class LoginPaneController {
 				}
 				maintStackPaneController.setScreen(pane);
 			}
-			else System.out.println("Do stworzenia");
+			else {
+				FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/MainUserPane.fxml"));
+				Pane pane = null;
+				try {
+					pane = fxmlLoader.load();
+				}catch (IOException e) {
+					e.printStackTrace();
+				}
+				maintStackPaneController.setScreen(pane);
+			}
 		}
-		else System.out.println("Komunikat o bledzie logowania");
+		else {
+			labelLoginPane.setText("Blad Logowania");
+		}
 	}
 }
