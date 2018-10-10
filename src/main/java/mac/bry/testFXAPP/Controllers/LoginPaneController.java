@@ -38,7 +38,6 @@ public class LoginPaneController {
 	
 	@FXML
 	public void initialize() {
-		
 	}
 	
 	@FXML
@@ -56,6 +55,8 @@ public class LoginPaneController {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
+				MainAdministratorPaneController mainAdministratorPaneController = fxmlLoader.getController();
+				
 				maintStackPaneController.setScreen(pane);
 			}
 			else {

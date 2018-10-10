@@ -26,6 +26,7 @@ public class MainStackPaneController {
 		
 		LoginPaneController loginPaneController = fxmlLoader.getController();
 		loginPaneController.setMaintStackPaneController(this);
+		
 	}
 
 	public void setScreen(Pane pane) {

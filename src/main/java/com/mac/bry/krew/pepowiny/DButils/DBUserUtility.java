@@ -72,6 +72,16 @@ public class DBUserUtility implements DBUserAPI {
 		}
 		else UserPrintProcesor.userPrintUsersList(userList);
 	}
+	public List<User> getUsersList() {
+		List<User> userList;
+		
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		userList = session.createQuery("from User").getResultList();
+		session.getTransaction().commit();
+		return userList;
+		
+	}
 	
 
 	public void showUsers() {
