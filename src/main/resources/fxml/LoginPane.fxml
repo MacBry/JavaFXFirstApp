@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="283.0" prefWidth="239.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.LoginPaneController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="306.0" prefWidth="199.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.LoginPaneController">
    <children>
       <Button fx:id="LoginButtonLoginPane" layoutX="26.0" layoutY="161.0" mnemonicParsing="false" onAction="#LoginOnActionEventLoginPane" prefHeight="48.0" prefWidth="146.0" text="Login" />
       <Label layoutX="33.0" layoutY="28.0" text="Login" />

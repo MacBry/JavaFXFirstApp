@@ -1,6 +1,7 @@
 package mac.bry.testFXAPP.Controllers;
 
 import java.io.IOException;
+import java.util.List;
 
 import com.mac.bry.krew.pepowiny.DButils.DBUserUtility;
 import com.mac.bry.krew.pepowiny.entity.User;
@@ -55,8 +56,7 @@ public class LoginPaneController {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				MainAdministratorPaneController mainAdministratorPaneController = fxmlLoader.getController();
-				
+							
 				maintStackPaneController.setScreen(pane);
 			}
 			else {

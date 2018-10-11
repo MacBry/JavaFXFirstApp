@@ -10,43 +10,47 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
 
 public class MainAdministratorPaneController {
 
 	@FXML
+	Pane AdministrationPane;
+	
+	@FXML
 	private TableView<User> TableViewMainAdministratorPane;
-	
-	private MainStackPaneController mainStackPaneController;
-	
-	
-	public void setMainStackPaneController(MainStackPaneController mainStackPaneController) {
-		this.mainStackPaneController = mainStackPaneController;
-	}
 
 	@FXML
 	private List<User> data ;
 	
 	@FXML
 	public void initialize() {
-		DBUserUtility ut = new DBUserUtility();
+		DBUserUtility dbUserUtility = new DBUserUtility();
 		
-		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/fxml/MainAdministratorPane.fxml"));
-		Pane pane = null;
-		try {
-			pane = fxmlLoader.load();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		data = ut.getUsersList();
-		for(User u : data) {
-			System.out.println(u.getLogin());
-		}
+		data = dbUserUtility.getUsersList();
+
 		ObservableList<User> obsList = FXCollections.observableArrayList(data);
+
 		TableViewMainAdministratorPane.setItems(obsList);
-		mainStackPaneController.setScreen(pane);
+		TableColumn<User, Integer>idCol = new TableColumn<User, Integer>("ID");
+		TableColumn<User, String>loginCol = new TableColumn<User,String>("LOGIN");
+		TableColumn<User, String>passwordCol = new TableColumn<User,String>("PASSWORD");
+		TableColumn<User, Boolean>permissionCol = new TableColumn<User,Boolean>("PERMISSION");
+	
+		idCol.setCellValueFactory(new PropertyValueFactory<User, Integer>("id"));
+		loginCol.setCellValueFactory(new PropertyValueFactory<User, String>("login"));
+		passwordCol.setCellValueFactory(new PropertyValueFactory<User, String>("password"));
+		permissionCol.setCellValueFactory(new PropertyValueFactory<User, Boolean>("permission"));
+		
+		TableViewMainAdministratorPane.getColumns().setAll(idCol, loginCol, passwordCol, permissionCol );
+		//AdministrationPane.getChildren().add(TableViewMainAdministratorPane);
+		
 	}
+	
 	
 }
