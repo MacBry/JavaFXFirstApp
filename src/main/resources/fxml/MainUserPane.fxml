@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="MainUserPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.MainUserPaneController">
    <children>
       <Label layoutX="187.0" layoutY="148.0" text="Main User Pane" />
+      <TabPane fx:id="TabPaneMainUserPane" layoutX="14.0" layoutY="14.0" prefHeight="375.0" prefWidth="375.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="USER LIST">
+            <content>
+              <AnchorPane fx:id="UserListTabPaneMainUserPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="100.0" layoutY="106.0" text="User list" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="HOSPITAL LIST">
+            <content>
+              <AnchorPane fx:id="HospitalListTabPaneMainUserPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="87.0" layoutY="75.0" text="hospital list" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox layoutX="407.0" layoutY="14.0" prefHeight="375.0" prefWidth="179.0">
+         <children>
+            <Button fx:id="AddUserMainUserPane" lineSpacing="5.0" mnemonicParsing="false" onAction="#AddUserOnAction" prefHeight="65.0" prefWidth="180.0" text="Add User" />
+            <Button fx:id="AddHospitalMainUserPane" mnemonicParsing="false" onAction="#addHospitalOnAction" prefHeight="65.0" prefWidth="181.0" text="Add Hospital" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="5.0" />
+         </opaqueInsets>
+      </VBox>
    </children>
 </Pane>
