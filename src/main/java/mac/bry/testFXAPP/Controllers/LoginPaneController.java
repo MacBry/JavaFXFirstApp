@@ -26,6 +26,9 @@ public class LoginPaneController {
 	}
 
 	@FXML
+	Pane LoginPane;
+	
+	@FXML
 	TextField LoginTextBoxLoginPane;
 	
 	@FXML
@@ -67,6 +70,12 @@ public class LoginPaneController {
 				}catch (IOException e) {
 					e.printStackTrace();
 				}
+				
+				MainUserPaneController mainUserPaneController = fxmlLoader.getController();
+				mainUserPaneController.setLoginPaneController(this);
+				
+				mainUserPaneController.setSize();
+				
 				maintStackPaneController.setScreen(pane);
 			}
 		}

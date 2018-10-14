@@ -3,6 +3,6 @@
 <?import javafx.scene.layout.StackPane?>
 
 
-<StackPane fx:id="MainStackPane" prefHeight="500.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.MainStackPaneController">
+<StackPane fx:id="MainStackPane" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mac.bry.testFXAPP.Controllers.MainStackPaneController">
 	<!-- TODO Add Nodes -->
 </StackPane>

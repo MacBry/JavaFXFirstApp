@@ -11,7 +11,7 @@ public class MainStackPaneController {
 	
 	
 	@FXML
-	StackPane MainStackPane;
+	private StackPane MainStackPane;
 	
 	@FXML
 	public void initialize() {
@@ -25,6 +25,7 @@ public class MainStackPaneController {
 		setScreen(pane);
 		
 		
+		
 		LoginPaneController loginPaneController = fxmlLoader.getController();
 		loginPaneController.setMaintStackPaneController(this);
 		
@@ -33,5 +34,9 @@ public class MainStackPaneController {
 	public void setScreen(Pane pane) {
 		MainStackPane.getChildren().clear();
 		MainStackPane.getChildren().add(pane);
+	}
+	
+	public void setScreenSize(double newWidth, double newHight) {
+		MainStackPane.setMinSize(newWidth, newWidth);
 	}
 }
